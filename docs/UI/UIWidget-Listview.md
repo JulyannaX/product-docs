@@ -69,7 +69,7 @@ export default class NewUIScript1 extends UIScript {
 ```
 - 第四步：编写列表视图所在UI文件对应的脚本，这里我们写一个按下数字键1新增项目的逻辑便于测试效果：
   - 触发列表视图刷新onItemRefreshed时，通过实现节点数据基类（ListViewItemDataBase）刷新各UI项目的表现；增加/删除/修改/玩家滚动列表视图/请求刷新等操作都会触发刷新，而清空不会触发刷新。
- 
+
 ```ts
 export default class NewUIScript extends UIScript {
 
@@ -204,7 +204,7 @@ tileV.addItems(arrTileV)
         console.log("_____onItemExpansionChanged"+targetItem+bExpanded);
     });
 
-    this.Button.onClicked.add(()=>{
+    this.Button.onPressed.add(()=>{
       this.TreeView.addItems([new mw.TreeViewItemDataBase]);
     });
 

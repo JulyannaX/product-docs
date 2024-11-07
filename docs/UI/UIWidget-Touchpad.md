@@ -48,13 +48,13 @@ export default class DefaultUI extends UIScript {
 		let TouchPad = this.uiWidgetBase.findChildByPath('MWCanvas/TouchPad') as TouchPad
 		let text=this.uiWidgetBase.findChildByPath('MWCanvas/TextBlock') as TextBlock
 	
-		Plus.onClicked.add(()=>{ 
+		Plus.onPressed.add(()=>{ 
 			TouchPad.inputScale=(new Vector2(1,1))
 			let num =TouchPad.inputScale
 			text.text=(num.toString())
 		})
 	
-		Inc.onClicked.add(()=>{ 
+		Inc.onPressed.add(()=>{ 
 			TouchPad.inputScale=(new Vector2(0.2,0.2))
 			let num =TouchPad.inputScale
 			text.text=(num.toString())

@@ -94,11 +94,11 @@
   - 当摄像机朝向模式=固定朝向/跟随朝向（即使用控制器控制摄像机旋转不开启时），动态设置的弹簧臂相对旋转才会生效
     ![](https://cdn.233xyx.com/online/PL6bqcLnC4Mt1695279533730.gif)
     ![](https://cdn.233xyx.com/online/FZJgkk19xjaw1695279533730.gif)
-::: tip
-注意区分：摄像机的相对位置/相对旋转vs弹簧臂的相对位置/相对旋转
+    ::: tip
+    注意区分：摄像机的相对位置/相对旋转vs弹簧臂的相对位置/相对旋转
 - 摄像机的相对位置/相对旋转仅改变摄像机，不影响弹簧臂；而调整弹簧臂的相对位置/相对旋转时，会连带摄像机的位置和方向一起变化。
   - 可以把弹簧臂理解成自拍杆，自拍杆的近端由自拍者手持，远端固定相机；摄像机的相对位置/相对旋转仅调整远端相机的位置和方向，不会影响自拍杆；而弹簧臂的相对位置/相对旋转调整自拍杆（会连带相机）的位置和方向。
-:::
+  :::
 - 如果想要动态设置弹簧臂的方向，例如重置摄像机到角色正背后，但而后仍希望弹簧臂继续由玩家控制方向，可以使用如下两种方法：
 ```TypeScript
     //方法一：先关闭使用控制器控制摄像机旋转，然后将弹簧臂相对旋转设置为(0,0,0)
@@ -236,24 +236,24 @@ export default class UIDefault extends DefaultUI_generate {
 
 
         //LocationFixed
-        this.mStaleButton.onClicked.add(() => {
+        this.mStaleButton.onPressed.add(() => {
 			Camera.currentCamera.positionMode=0
         })
         //LocationFollow
-		this.mStaleButton_1.onClicked.add(() => {
+		this.mStaleButton_1.onPressed.add(() => {
 			Camera.currentCamera.positionMode=1
         })
 
         //RotationFixed
-        this.mStaleButton_2.onClicked.add(() => {
+        this.mStaleButton_2.onPressed.add(() => {
 			Camera.currentCamera.rotationMode=0
 		})
         //RotationFollow
-        this.mStaleButton_3.onClicked.add(() => {
+        this.mStaleButton_3.onPressed.add(() => {
 			Camera.currentCamera.rotationMode=1
 		})
         //RotationControl
-        this.mStaleButton_4.onClicked.add(() => {
+        this.mStaleButton_4.onPressed.add(() => {
 			Camera.currentCamera.rotationMode=2
 		})
     }
